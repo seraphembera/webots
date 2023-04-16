@@ -1,0 +1,801 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.10867300254785005 0.9844544354100452 0.13798421329530391 4.417209346848995
+  position -4.964672202080705 2.3320772075458973 -1.2584538586477023
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 20 20
+}
+Robot {
+  translation 0 1.4 0
+  children [
+    DEF left_front_rod HingeJoint {
+      jointParameters HingeJointParameters {
+        position -2
+        anchor 0 0 0.1
+      }
+      device [
+        RotationalMotor {
+          name "left_front_joint_motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.4299999999999999 0.08322936730942844 0.2818594853651364
+        rotation -1 0 0 1.9999999999999998
+        children [
+          Transform {
+            translation 0 -0.2 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position 2.6
+                }
+                endPoint Solid {
+                  translation 0 -0.17137775067378946 0.10310027436429284
+                  rotation 1 0 0 2.6
+                  children [
+                    Transform {
+                      translation 0 -1 0
+                      children [
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                          }
+                          device [
+                            RotationalMotor {
+                              name "left_wheel_motor"
+                              maxPosition 100
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.1 0 0
+                            rotation 1 0 0 0
+                            children [
+                              Transform {
+                                translation -0.06 0 0
+                                rotation 0 0 1 1.5707996938995747
+                                children [
+                                  Shape {
+                                    appearance Appearance {
+                                      material Material {
+                                      }
+                                    }
+                                    geometry Cylinder {
+                                      height 0.1
+                                      radius 0.05
+                                    }
+                                  }
+                                ]
+                              }
+                              DEF left_wheel Transform {
+                                rotation 0 0 1 1.5707996938995747
+                                children [
+                                  Shape {
+                                    appearance Appearance {
+                                      texture ImageTexture {
+                                        url [
+                                          "textures/checkered_marble.jpg"
+                                        ]
+                                      }
+                                    }
+                                    geometry Cylinder {
+                                      height 0.1
+                                      radius 0.1
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                            name "solid(1)"
+                            boundingObject Transform {
+                              rotation 0 0 1 1.5707996938995747
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                    }
+                                  }
+                                  geometry Cylinder {
+                                    height 0.1
+                                    radius 0.1
+                                  }
+                                }
+                              ]
+                            }
+                            physics Physics {
+                            }
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      translation 0 -1 0
+                      children [
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                          }
+                          endPoint Solid {
+                            rotation 1 0 0 3.457541834939446
+                            children [
+                              Transform {
+                                children [
+                                  HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                    }
+                                    endPoint SolidReference {
+                                      solidName "left_back_rod_solid"
+                                    }
+                                  }
+                                ]
+                              }
+                              Transform {
+                                rotation 0 0 1 1.5707996938995747
+                                children [
+                                  Shape {
+                                    appearance Appearance {
+                                      material Material {
+                                      }
+                                    }
+                                    geometry Cylinder {
+                                      height 0.06
+                                      radius 0.06
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                            boundingObject Transform {
+                              rotation 0 0 1 1.5707996938995747
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                    }
+                                  }
+                                  geometry Cylinder {
+                                    height 0.06
+                                    radius 0.06
+                                  }
+                                }
+                              ]
+                            }
+                            physics Physics {
+                            }
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      translation 0 -0.6 0
+                      children [
+                        DEF rod2_shape Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.8 0.04
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      translation 0 -0.2 0
+                      rotation 0 0 1 1.5707996938995747
+                      children [
+                        DEF link2_shape Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Cylinder {
+                            height 0.06
+                            radius 0.06
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                  name "solid(1)"
+                  boundingObject Transform {
+                    translation 0 -0.6 0
+                    children [
+                      Shape {
+                        appearance Appearance {
+                          material Material {
+                          }
+                        }
+                        geometry Box {
+                          size 0.04 0.8 0.04
+                        }
+                      }
+                    ]
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+            ]
+          }
+          DEF rod_link Transform {
+            translation 0 0.2 0
+            rotation 0 0 1 1.5707996938995747
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                  }
+                }
+                geometry Cylinder {
+                  height 0.06
+                  radius 0.04
+                }
+              }
+            ]
+          }
+          DEF rod1 Transform {
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.4 0.04
+                }
+              }
+            ]
+          }
+        ]
+        name "solid(2)"
+        boundingObject DEF rod_boundingobjet Transform {
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                }
+              }
+              geometry Box {
+                size 0.04 0.4 0.04
+              }
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF left_back_rod HingeJoint {
+      jointParameters HingeJointParameters {
+        position 2
+        anchor 0 0 -0.1
+      }
+      device [
+        RotationalMotor {
+          name "left_back_joint_motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.43 0.08322936730942845 -0.2818594853651364
+        rotation 1 0 0 1.9999999999999998
+        children [
+          Transform {
+            translation 0 -0.2 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position -2.6
+                }
+                endPoint Solid {
+                  translation 0 -0.17137775067378946 -0.10310027436429284
+                  rotation -1 0 0 2.6
+                  children [
+                    Transform {
+                      translation 0 -0.6 0
+                      children [
+                        DEF rod2_shape Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.8 0.04
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      translation 0 -0.2 0
+                      rotation 0 0 1 1.5707996938995747
+                      children [
+                        DEF link2_shape Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Cylinder {
+                            height 0.06
+                            radius 0.06
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                  name "left_back_rod_solid"
+                  boundingObject Transform {
+                    translation 0 -0.6 0
+                    children [
+                      Shape {
+                        appearance Appearance {
+                          material Material {
+                          }
+                        }
+                        geometry Box {
+                          size 0.04 0.8 0.04
+                        }
+                      }
+                    ]
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+            ]
+          }
+          DEF rod_link Transform {
+            translation 0 0.2 0
+            rotation 0 0 1 1.5707996938995747
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                  }
+                }
+                geometry Cylinder {
+                  height 0.06
+                  radius 0.04
+                }
+              }
+            ]
+          }
+          DEF rod1 Transform {
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.4 0.04
+                }
+              }
+            ]
+          }
+        ]
+        name "solid(3)"
+        boundingObject DEF rod_boundingobjet Transform {
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                }
+              }
+              geometry Box {
+                size 0.04 0.4 0.04
+              }
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF right_front_rod HingeJoint {
+      jointParameters HingeJointParameters {
+        position -2
+        anchor 0 0 0.1
+      }
+      device [
+        RotationalMotor {
+          name "right_front_joint_motor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.43 0.08322936730942845 0.2818594853651364
+        rotation -1 0 0 1.9999999999999998
+        children [
+          Transform {
+            translation 0 -0.2 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position 2.6
+                }
+                endPoint Solid {
+                  translation 0 -0.17137775067378946 0.10310027436429284
+                  rotation 1 0 0 2.6
+                  children [
+                    Transform {
+                      translation 0 -1 0
+                      rotation 0 0 1 3.141592653589793
+                      children [
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                          }
+                          device [
+                            RotationalMotor {
+                              name "right_wheel_motor"
+                              maxPosition 100
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.1 0 0
+                            rotation 1 0 0 0
+                            children [
+                              Transform {
+                                translation -0.06 0 0
+                                rotation 0 0 1 1.5707996938995747
+                                children [
+                                  Shape {
+                                    appearance Appearance {
+                                      material Material {
+                                      }
+                                    }
+                                    geometry Cylinder {
+                                      height 0.1
+                                      radius 0.05
+                                    }
+                                  }
+                                ]
+                              }
+                              DEF left_wheel Transform {
+                                rotation 0 0 1 1.5707996938995747
+                                children [
+                                  Shape {
+                                    appearance Appearance {
+                                      texture ImageTexture {
+                                        url [
+                                          "textures/checkered_marble.jpg"
+                                        ]
+                                      }
+                                    }
+                                    geometry Cylinder {
+                                      height 0.1
+                                      radius 0.1
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                            name "solid(1)"
+                            boundingObject Transform {
+                              rotation 0 0 1 1.5707996938995747
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                    }
+                                  }
+                                  geometry Cylinder {
+                                    height 0.1
+                                    radius 0.1
+                                  }
+                                }
+                              ]
+                            }
+                            physics Physics {
+                            }
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      translation 0 -1 0
+                      children [
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                          }
+                          endPoint Solid {
+                            rotation 1 0 0 0
+                            children [
+                              Transform {
+                                children [
+                                  HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                    }
+                                    endPoint SolidReference {
+                                      solidName "right_back_rod_solid"
+                                    }
+                                  }
+                                ]
+                              }
+                              Transform {
+                                rotation 0 0 1 1.5707996938995747
+                                children [
+                                  Shape {
+                                    appearance Appearance {
+                                      material Material {
+                                      }
+                                    }
+                                    geometry Cylinder {
+                                      height 0.06
+                                      radius 0.06
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                            boundingObject Transform {
+                              rotation 0 0 1 1.5707996938995747
+                              children [
+                                Shape {
+                                  appearance Appearance {
+                                    material Material {
+                                    }
+                                  }
+                                  geometry Cylinder {
+                                    height 0.06
+                                    radius 0.06
+                                  }
+                                }
+                              ]
+                            }
+                            physics Physics {
+                            }
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      translation 0 -0.6 0
+                      children [
+                        DEF rod2_shape Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.8 0.04
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      translation 0 -0.2 0
+                      rotation 0 0 1 1.5707996938995747
+                      children [
+                        DEF link2_shape Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Cylinder {
+                            height 0.06
+                            radius 0.06
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                  name "solid(1)"
+                  boundingObject Transform {
+                    translation 0 -0.6 0
+                    children [
+                      Shape {
+                        appearance Appearance {
+                          material Material {
+                          }
+                        }
+                        geometry Box {
+                          size 0.04 0.8 0.04
+                        }
+                      }
+                    ]
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+            ]
+          }
+          DEF rod_link Transform {
+            translation 0 0.2 0
+            rotation 0 0 1 1.5707996938995747
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                  }
+                }
+                geometry Cylinder {
+                  height 0.06
+                  radius 0.04
+                }
+              }
+            ]
+          }
+          DEF rod1 Transform {
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.4 0.04
+                }
+              }
+            ]
+          }
+        ]
+        name "solid(5)"
+        boundingObject DEF rod_boundingobjet Transform {
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                }
+              }
+              geometry Box {
+                size 0.04 0.4 0.04
+              }
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF right_back_rod HingeJoint {
+      jointParameters HingeJointParameters {
+        position 2
+        anchor 0 0 -0.1
+      }
+      device [
+        RotationalMotor {
+          name "right_back_joint_motor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.43 0.08322936730942845 -0.2818594853651364
+        rotation 1 0 0 1.9999999999999998
+        children [
+          Transform {
+            translation 0 -0.2 0
+            children [
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position -2.6
+                }
+                endPoint Solid {
+                  translation 0 -0.17137775067378946 -0.10310027436429284
+                  rotation -1 0 0 2.6
+                  children [
+                    Transform {
+                      translation 0 -0.6 0
+                      children [
+                        DEF rod2_shape Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Box {
+                            size 0.04 0.8 0.04
+                          }
+                        }
+                      ]
+                    }
+                    Transform {
+                      translation 0 -0.2 0
+                      rotation 0 0 1 1.5707996938995747
+                      children [
+                        DEF link2_shape Shape {
+                          appearance Appearance {
+                            material Material {
+                            }
+                          }
+                          geometry Cylinder {
+                            height 0.06
+                            radius 0.06
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                  name "right_back_rod_solid"
+                  boundingObject Transform {
+                    translation 0 -0.6 0
+                    children [
+                      Shape {
+                        appearance Appearance {
+                          material Material {
+                          }
+                        }
+                        geometry Box {
+                          size 0.04 0.8 0.04
+                        }
+                      }
+                    ]
+                  }
+                  physics Physics {
+                  }
+                }
+              }
+            ]
+          }
+          DEF rod_link Transform {
+            translation 0 0.2 0
+            rotation 0 0 1 1.5707996938995747
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                  }
+                }
+                geometry Cylinder {
+                  height 0.06
+                  radius 0.04
+                }
+              }
+            ]
+          }
+          DEF rod1 Transform {
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                  }
+                }
+                geometry Box {
+                  size 0.04 0.4 0.04
+                }
+              }
+            ]
+          }
+        ]
+        name "solid(4)"
+        boundingObject DEF rod_boundingobjet Transform {
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                }
+              }
+              geometry Box {
+                size 0.04 0.4 0.04
+              }
+            }
+          ]
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF body_shape_transfrom Transform {
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+            }
+          }
+          geometry Box {
+            size 0.8 0.12 0.6
+          }
+        }
+      ]
+    }
+  ]
+  boundingObject Shape {
+    geometry Sphere {
+      radius 0.02
+    }
+  }
+  physics Physics {
+  }
+}
